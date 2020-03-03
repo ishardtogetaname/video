@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.UserMapper">
+    <resultMap id="userWithCollection" type="User">
+        <collection property="collections" select="findCollectionWithUid" column="id">
+        </collection>
+    </resultMap>
+
+    <insert id="insert">
+        insert into user values(default,#{username},#{phone},#{password},#{img},#{age},#{birthday},#{sex})
+    </insert>
+    <insert id="insCollection">
+        insert into user_collection values(#{param1},#{param2})
+    </insert>
+
+    <update id="updByUser">
+        update user set username=#{username},password=#{password},phone=#{phone},age=#{age},birthday=#{birthday},sex=#{sex} where id = #{id}
+    </update>
+
+    <update id="updImgById">
+        update user set img = #{param2} where id = #{param1}
+    </update>
+    <delete id="delCollection">
+        delete from user_collection where uid=#{param1} and vid=#{param2}
+    </delete>
+
+    <select id="selectByNameAndPwd" resultType="com.example.pojo.User">
+        select * from user where (username = #{param1} or phone = #{param1}) and password = #{param2}
+    </select>
+
+    <select id="selectByName" resultType="com.example.pojo.User">
+        select * from user where username = #{param1} or phone = #{param1}
+    </select>
+
+    <select id="selectAll" resultType="com.example.pojo.User">
+        select * from user limit #{param1},#{param2}
+    </select>
+
+    <select id="selectCount" resultType="java.lang.Integer">
+        select count(*) from user
+    </select>
+
+    <select id="selectUserWithCollectionById" resultMap="userWithCollection">
+        select * from USER where id = #{id}
+    </select>
+
+    <select id="selectByCondition" resultType="com.example.pojo.User">
+        select * from USER
+        <where>
+            <if test="param1.username != null and param1.username != ''">
+                and username like concat('%',#{param1.username},'%')
+            </if>
+            <if test="param1.phone != null and param1.phone != ''">
+                and phone = #{param1.phone}
+            </if>
+            <if test="param1.sex != null and param1.sex != ''">
+                and sex = #{param1.sex}
+            </if>
+        </where>
+        limit #{param2},#{param3}
+    </select>
+
+    <select id="selectCountByCondition" resultType="java.lang.Integer">
+        select count(*) from USER
+        <where>
+            <if test="username != null and username != ''">
+                and username like concat('%',#{username},'%')
+            </if>
+            <if test="phone != null and phone != ''">
+                and phone = #{phone}
+            </if>
+            <if test="sex != null and sex != ''">
+                and sex = #{sex}
+            </if>
+        </where>
+    </select>
+    <select id="findCollectionWithUid" resultType="com.example.pojo.Video">
+        select * from videos v,user_collection uc where v.id = uc.vid and uc.uid = #{id}
+    </select>
+</mapper>

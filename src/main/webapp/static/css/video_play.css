@@ -1,0 +1,23 @@
+body{}
+.container{width: 1200px;margin: 61px auto 0;}
+
+video{outline:none;float: left;}
+.title{width:1100px;margin: 50px auto 20px;}
+.player{width: 1100px;height: 450px;text-align: center; margin: 0 auto;}
+.episode{background: #4d4d4d;width: 300px;border-bottom: 0.5px solid #4d4d4d; height: 450px; float: left;text-align: left;}
+.episode h3{color: #bfbfbf;font-size: 20px;margin: 10px;}
+.line{border-bottom: 1px solid #939393;}
+.episodeFont{color: #e6e6e6;font-size: 15px;margin: 10px;cursor: pointer;padding: 5px;border-radius: 3px;}
+.episodeFont:hover{background: rgba(255,255,255,0.2);}
+.episodeFontCurrent{color: #05a4e6;font-size: 15px;margin: 10px;background: #e4e4e4;padding: 5px;border-radius: 3px;cursor: pointer;}
+
+.hrFont{width: 1100px;height: 30px;font-size: 0;display: flex;margin: 80px auto 0 auto;}
+.hrFont div{border-top: 1px dashed #939393;margin-top: 15px; width: 5%;flex: none; display: inline-block;vertical-align: middle;line-height: 30px;}
+.hrFont span{vertical-align: middle;line-height: 30px;flex: none; display: inline-block;font-size: 20px;text-align: center;margin: 0 15px;}
+.hrFont div:last-child{width: 75%;flex: 1;}
+
+.episodeList{margin:0 auto 150px auto;width: 1100px;}
+.episode-div{height: 40px;line-height: 40px; width: 70%; margin: 10px auto 0 auto;font-size: 20px;color: #606060;}
+.episode-div span{float: left;margin-right: 50px;}
+.downloadBtn{float:right;color: #ffffff;background: #15b5ff;width: 100px;height: 40px;margin-left: 40px;text-align: center;}
+.downloadBtn:hover{background: #068cff;color: #fff}

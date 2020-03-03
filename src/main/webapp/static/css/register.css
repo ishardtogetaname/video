@@ -1,0 +1,21 @@
+.register-container{width: 60%;margin: 0 auto;}
+.register-header{height: 60px;margin: 0 auto;}
+.vertical-line{border-right:1px solid gray;margin-right:10px;margin-left:10px}
+.register-header label{font-size: 20px;color: #7c7c7c;}
+.register-content{background: #fafafa;width: 100%;height: 80%; padding-top: 30px;}
+.register-content form{width: 670px;margin: 0 auto;background:url("")}
+.register-input-line{display: inline-block;text-align: center;width: 100%;margin-top: 20px;}
+.register-input-line span{text-align: right;width: 100px;float: left;line-height: 40px}
+.register-btn{cursor:pointer;width: 132px;line-height: 40px;background: #fafafa;font-size:15px;border: 1px solid #afafaf;float: left;margin-left: 15px;color: #878787;}
+.register-btn:hover{background: #ededed !important;color: #878787;}
+.register-input{height: 40px;line-height: 40px;width:300px;padding-left: 10px;transition: all .3s;font-size: 17px;border: 1px solid #e6e6e6;float:left;border-radius: 2px}
+.register-input:hover{border-color: #aaaaaa;}
+.register-input:focus{border-color: #93D1FF}
+.register-input-error{color: red;font-size: 14px;float: left;line-height: 40px;margin-left: 15px;}
+.register-input-agree-line{margin-left: 100px;margin-top: 10px;}
+.register-input-agree-line a{color: #3fc2f9;line-height: 40px}
+.register-input-agree-line a:hover{color: #0fa2f9;text-decoration: underline;}
+.register-input-submit-line{margin-left: 160px;margin-top: 10px;}
+.register-input-submit-btn{width: 150px;background: #30aaff;border: none;height: 40px;color: #fff;cursor: pointer}
+.register-input-submit-btn:hover{background: #3393ff}
+.register-image-div{float: left;width: 60px;height: 60px;margin-top: 30px;margin-left: 15px;}

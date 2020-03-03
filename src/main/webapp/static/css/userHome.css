@@ -1,0 +1,27 @@
+.container{width: 1200px;margin: 0 auto;padding-bottom: 20px;}
+
+.avatarDiv{width: 100%;height: 120px;margin-top: 20px; background: lightskyblue;border: 1px solid lightskyblue;}
+.homeAvatar{height:100px; width: 120px; border-radius: 100%;margin:10px 0 10px 10px;cursor: pointer;}
+
+.input{height: 30px;border: 1px solid #c4c4c4; border-radius: 3px;padding-left: 10px;}
+.label{width: 100px;display: inline-block; text-align: right;line-height:30px;height: 30px;margin-bottom: 10px;}
+.infoDiv{padding-left: 40px;padding-top:10px;}
+.infoInp{background: #eaeaea;cursor: not-allowed;}
+
+.submitBtn{width: 100px;height: 30px;background: #15bbff;border: 0;cursor: pointer;color: #fff;margin-left: 120px;margin-top: 15px;}
+.submitBtn:hover{background: #0fa2f9}
+.resetBtn{width: 100px;height: 30px;background: #ff3a29;border: 0;cursor: pointer;color: #fff;margin-top: 15px;}
+.layui-laydate-content td,.layui-laydate-content th{font-size: 14px;}
+.layui-upload-drag{margin-bottom: 10px; vertical-align: middle;}
+
+.tabDiv{width: 100%;border: 1px solid lightskyblue;}
+
+.collectionsList{font-size: 0;margin-bottom: 30px;}
+.collectionsList:last-child{margin-bottom: 0;}
+.collectionsList li{display: inline-block;margin-right: 20px;font-size: 18px;}
+.collectionsList li:last-child{margin-right: 0;}
+.img-block{display: block;}
+.name-block{display: block;margin-top: 5px; width: 180px;text-align: center;}
+.collectionsList li img{width: 180px;height: 280px;}
+
+

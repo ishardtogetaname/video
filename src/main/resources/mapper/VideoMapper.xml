@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.VideoMapper">
+
+  <resultMap id="VideoResultMap" type="Video">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="current_episode" jdbcType="INTEGER" property="currentEpisode" />
+    <result column="total_episode" jdbcType="INTEGER" property="totalEpisode" />
+    <result column="img_src" jdbcType="VARCHAR" property="imgSrc" />
+    <result column="starring" jdbcType="VARCHAR" property="starring" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="category" jdbcType="INTEGER" property="category" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
+    <result column="publish_date" jdbcType="DATE" property="publishDate" />
+    <result column="finished" jdbcType="BIT" property="finished"/>
+
+    <collection property="categoryList" ofType="Category" column="id"
+      select="selectCategoryByVideoId">
+    </collection>
+  </resultMap>
+
+  <resultMap id="VideoAndTypeResultMap" type="Video">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="current_episode" jdbcType="INTEGER" property="currentEpisode" />
+    <result column="total_episode" jdbcType="INTEGER" property="totalEpisode" />
+    <result column="img_src" jdbcType="VARCHAR" property="imgSrc" />
+    <result column="starring" jdbcType="VARCHAR" property="starring" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="category" jdbcType="INTEGER" property="category" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
+    <result column="publish_date" jdbcType="DATE" property="publishDate" />
+    <result column="finished" jdbcType="BIT" property="finished"/>
+
+    <association property="typeName" column="type"
+      select="com.example.mapper.CategoryMapper.getNameById">
+    </association>
+
+    <collection property="categoryList" ofType="Category" column="id"
+      select="selectCategoryByVideoId">
+    </collection>
+  </resultMap>
+
+    <insert id="insVideo">
+      insert into videos
+      <trim prefix="(" prefixOverrides="," suffix=")">
+        <if test="name != null and name!=''">
+          ,name
+        </if>
+        <if test="totalEpisode != null and totalEpisode!=''">
+          ,total_episode
+        </if>
+        <if test="currentEpisode != null and currentEpisode!=''">
+          ,current_episode
+        </if>
+        <if test="imgPath != null and imgPath!= ''">
+          ,img_src
+        </if>
+        <if test="starring != null and starring!=''">
+          ,starring
+        </if>
+        <if test="description != null and description!=''">
+          ,description
+        </if>
+        <if test="type != null and type!=0">
+          ,type
+        </if>
+        <if test="location != null and location!=''">
+          ,location
+        </if>
+        <if test="year != null and year!=''">
+          ,publish_date
+        </if>
+        <if test="statue != null">
+          ,finished
+        </if>
+      </trim>
+
+      <trim prefix="values(" prefixOverrides="," suffix=")">
+        <if test="name != null and name!=''">
+          ,#{name}
+        </if>
+        <if test="totalEpisode != null and totalEpisode!=''">
+          ,#{totalEpisode}
+        </if>
+        <if test="currentEpisode != null and currentEpisode!=''">
+          ,#{currentEpisode}
+        </if>
+        <if test="imgPath != null and imgPath!= ''">
+          ,#{imgPath}
+        </if>
+        <if test="starring != null and starring!=''">
+          ,#{starring}
+        </if>
+        <if test="description != null and description!=''">
+          ,#{description}
+        </if>
+        <if test="type != null and type!=0">
+          ,#{type}
+        </if>
+        <if test="location != null and location!=''">
+          ,#{location}
+        </if>
+        <if test="year != null and year!=''">
+          ,#{year}
+        </if>
+        <if test="statue != null">
+          ,#{statue}
+        </if>
+      </trim>
+    </insert>
+
+    <update id="updVideo">
+      update videos
+      <set>
+        <if test="param1 != null and param1 != ''">
+          name = #{param1},
+        </if>
+        <if test="param2 != null and param2 != ''">
+          total_episode = #{param2},
+        </if>
+        <if test="param3 != null and param3 != ''">
+          current_episode = #{param3},
+        </if>
+        <if test="param4 != null">
+          type = #{param4},
+        </if>
+        <if test="param5 != null and param5 != ''">
+          starring = #{param5},
+        </if>
+        <if test="param6 != null">
+          publish_date = #{param6},
+        </if>
+        <if test="param7 != null and param7 != ''">
+          location = #{param7},
+        </if>
+        <if test="param8 != null">
+          finished = #{param8},
+        </if>
+        <if test="param9 != null and param9 != ''">
+          img_src = #{param9},
+        </if>
+        <if test="param10 != null and param10 != ''">
+          description = #{param10},
+        </if>
+      </set>
+      where id = #{param11}
+    </update>
+
+    <select id="selectAllByCondition" resultType="com.example.pojo.Video">
+    select * from videos v
+    left join video_category vc on v.id = vc.video_id
+    left join category c on c.id = vc.category_id
+    <where>
+      <if test="param1 != null and param1 != 0">
+        and v.type = #{param1}
+      </if>
+      <if test="param2 != null and param2 != 0">
+        and c.id = #{param2}
+      </if>
+      <if test="param3 != null and param3 !='全部'">
+        and v.location = #{param3}
+      </if>
+      <if test="param4 != null and param4 != 0" >
+        and v.publish_date = #{param4}
+      </if>
+      <if test="param7 != null and param7 != 0">
+        and v.publish_date &gt;= #{param7}
+      </if>
+      <if test="param8 != null and param8 != 0">
+        and v.publish_date &lt;= #{param8}
+      </if>
+    </where>
+    group by name
+    limit #{param5},#{param6}
+  </select>
+
+  <select id="selectCountByCondition" resultType="java.lang.Integer">
+    select count(*) from (select count(*) from videos v
+    left join video_category vc on v.id = vc.video_id
+    left join category c on c.id = vc.category_id
+    <where>
+      <if test="param1 != null and param1 != 0">
+        and v.type = #{param1}
+      </if>
+      <if test="param2 != null and param2 != 0">
+        and c.id = #{param2}
+      </if>
+      <if test="param3 != null and param3 !='全部'">
+        and v.location = #{param3}
+      </if>
+      <if test="param4 != null and param4 != 0" >
+        and v.publish_date = #{param4}
+      </if>
+      <if test="param5 != null and param5 != 0">
+        and v.publish_date &gt;= #{param5}
+      </if>
+      <if test="param6 != null and param6 != 0">
+        and v.publish_date &lt;= #{param6}
+      </if>
+    </where>
+    group by name) a
+  </select>
+
+  <select id="findVideoWithCatrgory" resultMap="VideoResultMap">
+    select * from videos
+    left join video_category vc on videos.id = vc.video_id
+    left join category on category.id = vc.category_id
+    where videos.id = #{id}
+    group by videos.name
+  </select>
+
+  <select id="findCategoryWithVideo" resultType="com.example.pojo.Category">
+    select * from category,video_category
+    where category.id = video_category.category_id
+    and video_category.video_id = #{id}
+  </select>
+
+  <select id="selectById" resultMap="VideoResultMap">
+    select * from videos where id = #{id}
+  </select>
+
+  <select id="selectCategoryByVideoId" resultType="Category">
+    select c.* from video_category vc,category c
+    where c.id = vc.category_id
+    and vc.video_id = #{id}
+  </select>
+
+  <select id="findVideoAndCategory" resultMap="VideoAndTypeResultMap">
+    select * from videos
+  </select>
+
+  <select id="findVideoAndCategoryByCondition" resultMap="VideoAndTypeResultMap">
+    select * from videos v
+    left join video_category vc on v.id = vc.video_id
+    left join category c on c.id = vc.category_id
+    <where>
+      <if test="param1.name != null and param1.name != ''">
+        and v.name like concat('%',#{param1.name},'%')
+      </if>
+      <if test="param1.type != null and param1.type != 0">
+        and v.type = #{param1.type}
+      </if>
+      <if test="param1.category != null and param1.category != ''">
+        and c.id = #{param1.category}
+      </if>
+      <if test="param2 != null and param2 != 0" >
+        and v.publish_date = #{param2}
+      </if>
+      <if test="param3 != null and param3 != 0">
+        and v.publish_date &gt;= #{param3}
+      </if>
+      <if test="param4 != null and param4 != 0">
+        and v.publish_date &lt;= #{param4}
+      </if>
+      <if test="param1.finished != null">
+        and v.finished = #{param1.finished}
+      </if>
+    </where>
+    group by name
+  </select>
+</mapper>

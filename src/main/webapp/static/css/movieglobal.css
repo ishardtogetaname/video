@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* 图标 */
+@font-face {font-family: "iconfont";
+    src: url('iconfont.eot?t=1571061238233'); /* IE9 */
+    src: url('iconfont.eot?t=1571061238233#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAXIAAsAAAAACwAAAAV5AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDXgqIQIZ3ATYCJAMcCxAABCAFhG0HbhtdCVFUUR6TfZFgbMtgbQgpdZKH4qG21EW4fYrGB88xNC7B87Xf71zZ3Ye4JOZ3dLpoCR4aXj1kn06kBLyLlfD+/3fL7gNPmCSYp2byhVYswyRB7IRQcbp1dh2pClKXf3d2P12hGN69QKwBjj2WtaOl+bkEJj7///dzdeJNu955Wy/vz9yAZpKIHJKGREgi3sRLHaVRasUBbBPvt26HAMW06wnNTJ7pAxWObhb0rUV4BlQJD17BFDJ7LDjVQU5ATqZbJHeAY+/35Z+xVIASDPRDZ9+kNhj7ye9L6drmWuY5ONAOFwLYs8CAUYCDHBVGdkiDyigpxfLflLEIKCdDiV8VX211bub3kI80m5AcrS8Wyo1/8CBiKE5AQCLAUkqRV6sRvkhLE1mdcGGwdoYLhXUmlHD4HuIiwHoEuiu0JOeUcqAGyAKA3IFuK3gRJ1wFzp67k27X3opptXqK0iCNWqPRaRaiYL5uR6Waydd5a8VoNcwuVnE8X0cBf5FqyZmyZXxOSTO2tQL+LeEl1xr9vlLFAsUzBjvl6yYBlbYafMFcDcMKFcMso6VQxbv4y3Uz2pEeESznlpSwjoH8E2H74X5fYa0RFfPmoG/tBFuY55rs5RWlQwZf726LZNw39BfxvLm8E8lzO+YFSiYM4WVzcHYBK9R2mJ8/M7mzfth4/an/AtuaInbmHn45yxd4qUaKKbaYwYFsp2rEy3UkL9dC6lVi+asncyeuYOeurb3ux3Zfz9900yO3Xjo2++LN3I2tBdsyz54FXp8Hn5/6n574GIlg9OFK/GLhiKmEpLm6OW/0H95vKWS4FfyYrHjYzJdzba+ewRogPe1t5MDGbwFpILUUqIl+hI3sRMEnlTPvOt/o+r5fV0AgJ/o2LESB1IeVs993uofc8hpoeNq1w/18ZaIjOWA4vOv8rnIGPqI6kbYHfQlQUtr+NqN+rTGQtLXzkOtwqfddnY4dBPVbjY6kTddKrIOjp7NXeA/fd/q+chY+pToRFrIfAWrxEmD7ZQ75lt64uVA7CWaQk7QLw8tdpZSeQ2c0X2nOjDuwcXOtMfXfqY2a/yJ3L17VPsi66mO9fXP/1F0bvqxf63ihw+1rWkIkdq4+wv23cieRI1j2wWjasZOrfvDS2Fd27/hQv4YP/ba6E+Z/Tf7Yn/iEbN8gH/QnP2nRTYIUo9H+6dBctGTDvfmspd/7Ke87PPNLm1ObZg5s7Lkx4Cv1bU5jkTWc5vh12b//+nUDOZg9KmoafkD64oUUxgMUBgN1WLdJt1dd2BCbrO7fon2gFplvnn/6+Qq4/fnKKZfmkp+Scy+tnCpxsQlWAyDP7qWjAfIdawYAfdZ/AF2VIiBnhmVCiz3pxw98Nx5tvFlYMfI3Ff6fX/Z+a8/vXibnNK9mKLDan7O24SxX9Lo3uTSxpWkoTOyTlxQoNhbAjzhR7d1w/jpD14SMugiURBsYGb14J48ixEooACIZ41DMiClnl1BDIEVcDTBsAwFCpZOglPMARqW7eCe/hUC97yBSmRSKWU5/yRL6i2ATBJYR2Ta6dRkdCaWSnOkXMb/fw/LZOCPE9R4vwAqZSJ7u17tvuj6FTbLCEEdkFvP9RZGjOSGVoCcTd2Pj8RSdFlJRNiT2DotienifPlzRG/UOpRKAMU3AYohYbWitlqFFhKQkcc7SIiwzeA8WLyuOIVSMK6sGsAQZkY3T+umtbwP8FEuy0bhL2TpjMV5/IhFH7cURpCTQJiPEihuVFFq6eKcoVoiot3CHUtpwfcj5uKaW3tPbEvd5HVCM/pgkEiRFMiRHCqREKsi2s0wyHUnyqmX2yHiESfItrSnOdS1nTgshqORZKtuWTSkKjsFDjMCKvYQIHxYBAAAAAA==') format('woff2'),
+    url('iconfont.woff?t=1571061238233') format('woff'),
+    url('iconfont.ttf?t=1571061238233') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('iconfont.svg?t=1571061238233#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-fullscreen:before {
+    content: "\e7a6";
+}
+.icon-volume:before {
+    content: "\e626";
+}
+.icon-bofangzanting:before {
+    content: "\e61d";
+}
+.icon-more:before {
+    content: "\e64c";
+}
+.icon-bofang:before {
+    content: "\e737";
+}
+.icon-play:before {
+    content: "\e60f";
+}
+
+/*每一模块div容器通性*/
+.movie-container{width: 80%;margin: 0 auto;}
+/*头部*/
+.movie-header{position: fixed; left: 0; top: 0; z-index: 10000; width: 100%; height: 60px; background: #000;}
+.movie-logo-font{font-size: 20px;font-weight: bold;color: #4cd111;vertical-align: middle;}
+
+/*头部搜索框*/
+.input-search{height: 38px;line-height: 1.3;line-height: 38px \9;border-width: 2px;border-right: 0;border-style: solid;border-color: #a6a6a6;background-color: #fff;border-radius: 5px 0 0 5px;padding: 10px;font-size: 18px;color: #707070;width: 40%;vertical-align: middle; }
+.input-search:hover{border-color: lightskyblue;}
+.input-search:focus{border-color: lightskyblue}
+/*登录弹窗*/
+.loginDiv{width: 90%;margin: 0 auto;text-align: center;}
+.loginDiv div{width: 100%}
+.loginDiv div a:first-child{float: left;margin-top: 15px;color: #0b50f9;}
+.loginDiv div a:last-child{float: right;margin-top: 15px; color: #0b50f9;}
+.loginDiv div a:hover{text-decoration: underline;}
+.input-line{display: flex;border: 1px solid #aaaaaa;text-align: center;margin-top: 30px;}
+.input-line i{width: 20px; height:20px;margin: auto 5px auto 5px;background-image: url("/video/static/images/用户.png");background-size: contain;}
+.input-text{border: none;flex: 1;height: 40px;line-height: 40px;font-size: 17px;vertical-align: middle}
+.input-code-div{text-align: left;width: 100%;margin-top: 30px;}
+.input-code{height: 40px;line-height: 40px;font-size: 17px;vertical-align: middle;padding-left: 10px;}
+.codeImage{cursor: pointer; margin-left: 15px; width: 80px;height: 40px;background-image: url("/video/user/getCode");background-size: contain;}
+.btn-login{width: 100%;height: 35px;font-size: 16px; border: none;background: #32b3f9;color: #fff;margin-top: 15px;}
+.btn-login:hover {background: #0fa2f9;}
+/*搜索提示框*/
+.searchTipDiv{width: 27.8%;border: 1px solid #a8a8a8;border-radius: 2px; border-top:0;position: relative;top: -11.4px;margin: 0 29.85%;z-index:50;background: #fff;display: none;}
+.searchTipDiv a{display:inline-block;width: 100%;height: 40px;line-height: 40px;font-size: 18px;}
+.searchTipDiv a:hover{background: #eaeaea;color: #000;width: 100%;}
+/*首页内容基础样式*/
+.indexBody{background: #fff;}
+/*轮播图文本样式*/
+.lunbotuDiv{margin: 30px auto;}
+.lunbotu-text{width: 100%;height: 80px;line-height: 80px; position: absolute;bottom:0;background:#000;filter:alpha(opacity:50);opacity:0.5;-moz-opacity:0.5;font-size: 30px;font-weight: bolder;color: white;text-align: center;}
+/*筛选列表*/
+.selectDiv{border: 2px solid #F2F2F5;background: #f9f9f9;margin-top:40px;margin-bottom: 50px;}
+.selectList{list-style-type: none;padding: 10px 0;font-size: 0}
+.selectList li{display: inline-block;font-size: 15px;padding: 5px 10px;}
+.selectList span{font-size: 15px;margin-right: 20px;margin-left: 50px;color: #8a8a8c;}
+.selectDiv hr{width: 93%; margin: 0 auto;border: none;}
+/*视频列表展示*/
+.videoDiv{}
+.video-name-text{font-size: 18px;font-weight: bold;color: #3e3e3e;line-height: 40px;width:12em;/*保证文字不会被半汉字截断,显示11个文字*/overflow:hidden;/*超出长度的文字隐藏*/text-overflow:ellipsis;/*文字隐藏以后添加省略号*/white-space:nowrap;/*强制不换行*/}
+.video-name-text:hover{color: #0000aa;}
+.video-description-text{font-size: 16px;color: #747474;width:12em;/*保证文字不会被半汉字截断,显示11个文字*/overflow:hidden;/*超出长度的文字隐藏*/text-overflow:ellipsis;/*文字隐藏以后添加省略号*/white-space:nowrap;/*强制不换行*/}
+.videoList{font-size: 0;margin-bottom: 30px;}
+.videoList li{display: inline-block;margin-right: 2%;width: 15%;}
+.videoList li:last-child{display: inline-block;margin-right: 0;width: 15%;}
+.videoList li img{width: 100%;height: 300px;}
+/*分页按钮*/
+.pagebtnDiv{height: 50px;width: 100%;text-align: center;margin-top: 50px}
+/*底部*/
+.footerDiv{height: 90px;width: 100%;text-align: center;border-top: 1px solid #aaaaaa;margin-top: 50px;}
+.footerDiv div{margin-top: 30px;}
+.footerDiv p{height: 20px;width: 100%;text-align: center;color: #aaaaaa;}

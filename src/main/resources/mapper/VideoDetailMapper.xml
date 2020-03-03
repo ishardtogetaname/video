@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.VideoDetailMapper">
+
+    <update id="updByDetail">
+        update video_detail
+        <set>
+            <if test="title != null and title != ''">
+                title = #{title},
+            </if>
+            <if test="episode != null and episode != ''">
+                episode = #{episode},
+            </if>
+            <if test="fileName != null and fileName != ''">
+                file_name = #{fileName},
+            </if>
+            <if test="uploadDate != null">
+                upload_date = #{uploadDate},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>
