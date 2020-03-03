@@ -8,7 +8,6 @@
 - Spring5.1
 - Spring MVC5.1
 - Mybatis3.5.2
-- Echarts4.0
 - layui2.5.6
 - webuploader
 
